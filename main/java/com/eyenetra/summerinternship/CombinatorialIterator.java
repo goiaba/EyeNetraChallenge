@@ -14,7 +14,9 @@ public class CombinatorialIterator<T> implements Iterator<Set<T>> {
 	
 	public CombinatorialIterator(Set<T> set) {
 		this.listOfElements = new ArrayList<T>(set);
-		this.numberOfPossibleSubsets = numberOfSubsets();
+		/* As the set is treated as 'immutable' we can set the
+		 *  number of subsets here */
+		this.numberOfPossibleSubsets = getNumberOfSubsets();
 	}
 	
 	/**
@@ -23,7 +25,7 @@ public class CombinatorialIterator<T> implements Iterator<Set<T>> {
 	 *  and the subset composed by all items of the set. 
 	 * @return the number of possible subsets contained in the set
 	 */
-	public Integer numberOfSubsets() {
+	public Integer getNumberOfSubsets() {
 		return (int) Math.pow(2, listOfElements.size());
 	}
 
@@ -61,9 +63,8 @@ public class CombinatorialIterator<T> implements Iterator<Set<T>> {
 	}
 	
 	private String getBinaryRepresentation(int index) {
-		int repLenght = 1;
-		if (listOfElements.size() > 0) 
-			repLenght = listOfElements.size();
+		int repLenght = listOfElements.size();
+		if (repLenght == 0) repLenght = 1;
 		String repFormat = "%"+repLenght+"s";
 		return String
 				.format(repFormat, Integer.toBinaryString(index))

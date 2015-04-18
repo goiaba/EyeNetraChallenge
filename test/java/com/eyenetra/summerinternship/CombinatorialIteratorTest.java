@@ -25,23 +25,23 @@ public class CombinatorialIteratorTest {
 	@Test
 	public void testNumberOfSubsets() {
 		set.clear();
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 1);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 1);
 		set.add("A"); 
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 2);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 2);
 		set.add("B");
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 4);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 4);
 		set.add("C"); 
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 8);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 8);
 		set.add("D");
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 16);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 16);
 		set.add("E"); 
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 32);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 32);
 		set.add("F");
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 64);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 64);
 		set.add("G"); 
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 128);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 128);
 		set.add("H");
-		assertTrue(new CombinatorialIterator<String>(set).numberOfSubsets() == 256);
+		assertTrue(new CombinatorialIterator<String>(set).getNumberOfSubsets() == 256);
 	}
 
 	@Test
